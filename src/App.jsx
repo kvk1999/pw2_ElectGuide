@@ -63,7 +63,11 @@ function App() {
                 <h2 style={{ fontSize: '2rem' }}>Your Election Timeline</h2>
                 <p style={{ color: 'var(--text-muted)' }}>Follow these steps to ensure your vote is counted.</p>
               </div>
-              <ProcessTimeline />
+              <ProcessTimeline onStartStep={(target) => {
+                if (target === 'Review Ballot') setCurrentView('candidates');
+                if (target === 'Find Location') setCurrentView('map');
+                if (target === 'Voter Registration') setCurrentView('resources');
+              }} />
             </section>
 
             <section className="dashboard-grid">

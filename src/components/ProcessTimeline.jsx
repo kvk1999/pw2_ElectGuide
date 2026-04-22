@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { UserPlus, FileCheck, CheckCircle, Navigation } from 'lucide-react';
 
-const ProcessTimeline = () => {
+const ProcessTimeline = ({ onStartStep }) => {
   const steps = [
     {
       id: 1,
@@ -65,7 +65,11 @@ const ProcessTimeline = () => {
             </p>
             
             {step.status === 'active' && (
-              <button className="btn btn-primary" style={{ marginTop: '1rem', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+              <button 
+                className="btn btn-primary" 
+                style={{ marginTop: '1rem', padding: '0.5rem 1rem', fontSize: '0.9rem' }}
+                onClick={() => onStartStep(step.title)}
+              >
                 Start Step
               </button>
             )}
