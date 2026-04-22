@@ -96,3 +96,7 @@ gcloud run deploy pw2-electguide --source . --port 8080 --allow-unauthenticated 
 ```
 
 ---
+
+## DEPLOY LINK
+
+https://pw2-electguide-1066969893250.us-central1.run.app/
