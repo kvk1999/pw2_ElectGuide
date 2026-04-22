@@ -1,16 +1,90 @@
-# React + Vite
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🗳️ ElectGuide
 
-Currently, two official plugins are available:
+A modern, interactive election assistant designed to help users understand election processes, timelines, and procedures in a simple and engaging way. ElectGuide delivers clear guidance with a clean UI and structured flow, making civic participation easier for everyone.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Step-by-Step Election Guidance:**
+  Understand how elections work — from registration to voting — in a clear, guided flow.
 
-## Expanding the ESLint configuration
+* **Interactive Timeline:**
+  View important election dates, deadlines, and phases in an easy-to-follow format.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **User-Friendly UI/UX:**
+  Clean, modern interface with smooth interactions for a seamless learning experience.
+
+* **Accessible Information:**
+  Simplifies complex election rules into easy language for all users.
+
+* **Scalable Architecture:**
+  Built to support real-time updates and future integrations (notifications, region-based data).
+
+---
+
+## 🚀 How to Clone & Run Locally
+
+To get this project running on your machine:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/kvk1999/pw2_ElectGuide.git
+   ```
+
+2. **Navigate into the project directory:**
+
+   ```bash
+   cd pw2_ElectGuide
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+👉 Your app will run at: `http://localhost:5173/`
+
+---
+
+## ☁️ Deployment Ready
+
+ElectGuide is designed to be:
+
+* **Cloud-native**
+* Easily deployable using containers (Docker)
+* Compatible with platforms like:
+
+  * Google Cloud Run
+  * Vercel
+  * Render
+
+---
+
+## 💡 Future Enhancements
+
+* Region-based election data
+* Real-time notifications for deadlines
+* AI-powered Q&A assistant
+* Multi-language support
+
+---
+
+## 🎯 Goal
+
+ElectGuide aims to:
+
+> Make election processes simple, accessible, and understandable for everyone.
+
+---
+
