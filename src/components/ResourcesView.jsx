@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, ExternalLink, HelpCircle, Download, X, Eye, Share2 } from 'lucide-react';
+import { FileText, ExternalLink, HelpCircle, Download, X, Eye, Share2, Check } from 'lucide-react';
 
 const ResourcesView = () => {
   const [selectedResource, setSelectedResource] = useState(null);
+  const [notification, setNotification] = useState(null);
 
   const resources = [
     {
@@ -39,6 +40,19 @@ const ResourcesView = () => {
       content: "This portal connects you to the official state election board tracking system. Enter your registration details to see your ballot status."
     }
   ];
+
+  const handleDownload = (title) => {
+    setNotification(`Downloading ${title}...`);
+    setTimeout(() => {
+      setNotification(`Success! ${title} saved to downloads.`);
+      setTimeout(() => setNotification(null), 3000);
+    }, 1500);
+  };
+
+  const handleShare = (title) => {
+    setNotification("Link copied to clipboard!");
+    setTimeout(() => setNotification(null), 3000);
+  };
 
   return (
     <div style={{ marginTop: '2rem' }}>
@@ -121,14 +135,36 @@ const ResourcesView = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
+                <button 
+                  className="btn btn-primary" 
+                  style={{ flex: 1, justifyContent: 'center' }}
+                  onClick={() => handleDownload(selectedResource.title)}
+                >
                   <Download size={18} /> Download Full {selectedResource.type}
                 </button>
-                <button className="btn btn-outline" style={{ padding: '0.75rem' }}>
+                <button 
+                  className="btn btn-outline" 
+                  style={{ padding: '0.75rem' }}
+                  onClick={() => handleShare(selectedResource.title)}
+                >
                   <Share2 size={18} />
                 </button>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Global Notification Toast */}
+      <AnimatePresence>
+        {notification && (
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            style={{ position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', background: 'var(--secondary)', color: 'white', padding: '1rem 2rem', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.5)', zIndex: 2000, display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+          >
+            <Check size={20} /> {notification}
           </motion.div>
         )}
       </AnimatePresence>
