@@ -32,13 +32,13 @@ To get this project running on your machine:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/kvk1999/pw2_ElectGuide.git
+   git clone https://github.com/kvk1999/pw2-electguide.git
    ```
 
 2. **Navigate into the project directory:**
 
    ```bash
-   cd pw2_ElectGuide
+   cd pw2-electguide
    ```
 
 3. **Install dependencies:**
@@ -88,3 +88,11 @@ ElectGuide aims to:
 
 ---
 
+
+## ✅ Your command (cleaned & ready)
+
+```bash
+gcloud run deploy pw2-electguide --source . --port 8080 --allow-unauthenticated --project=versatile-being-494105-i6 --region=us-central1 --labels=dev-tutorial=an-adk
+```
+
+---
